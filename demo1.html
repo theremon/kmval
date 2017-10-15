@@ -1,0 +1,32 @@
+<html>
+	<head>
+	<title>KMVal Validation Library - Test 1</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- This page is U-G-L-Y. I'll fix it sometime soon... -->
+
+<div style="width: 900px">
+	<div>
+		<label>Username or Email
+			<span class="expl">Username scenario: Needs to be between 3 and 20 characters, letters or numbers: <b>/^[a-z0-9]{3,20}$/</b></span>
+			<span class="expl">Email scenario: Needs to be a valid email: <b>/^[a-zA-Z0-9.!#$%&’*+\=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/</b></span>
+			<input type="email" name="txtLoginUsername" /></label>
+		<label>Password<span class="expl">Needs to be between 5 and 50 characters: <b>/^.{5,50}$/</b></span>
+			<input type="password" name="txtLoginPassword"></label>
+	</div>
+	<div>
+		<div>
+			<input type="submit" name="frmLoginSubmit" id="frmLoginSubmit" value="Login">
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="val.js" type="text/javascript"></script>
+<script src="app.js" type="text/javascript"></script>
+</body>
+</html>

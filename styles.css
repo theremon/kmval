@@ -1,0 +1,69 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px
+}
+
+.one-half.column {
+	width: 48%;
+}
+
+.column:first-child, .columns:first-child {
+	margin-left: 0;
+}
+.column, .columns {
+	margin-left: 4%;
+}
+
+.column, .columns {
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+	padding: 6px 10px;
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	border-radius: 4px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+input[type='radio'] { float: left; margin-top:20px;}
+
+.expl {
+  color: #777;
+  font-size: 11px;
+  display: block;
+  padding-left: 10px;
+}
+.expl b {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.validationerrorline {
+  box-shadow: #f00 0px -4px inset !important;
+}
+.validationerror {
+  background-color: #ffcdcd !important;
+  border: 1px solid red !important;
+}
+.validationerrorvertical {
+  box-shadow: #f00 -4px 0px inset, #f00 4px 0px inset;
+}
+
+.checkoutrequiredprompt,
+.paymentrequiredprompt,
+.deliveryrequiredprompt,
+.billingrequiredprompt {
+  display: none;
+  color:#f00;
+}
+.visibleerror {
+  display: block !important;
+}

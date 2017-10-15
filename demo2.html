@@ -1,0 +1,131 @@
+<html>
+	<head>
+	<title>KMVal Validation Library - Test 1</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- This page is U-G-L-Y. I'll fix it sometime soon... -->
+
+<div style="width: 880px; border: 1px #efefef solid; border-radius:5px; padding: 10px; margin-bottom: 10px">
+	Form uses several ways to run the validation. Each field is handled differently, with its own rule.<br/>
+	Errors are shown using 3 different styles.
+	The final part of the form is validated only if the related option is checked, due to the fact that its fields are held separately.
+</div>
+<div style="width: 900px">
+	<!-- left col -->
+	<div class="one-half column" style="border: 1px #efefef solid; border-radius:5px; padding: 13px;">
+		<div>
+			<label>Username <sup>*</sup>
+				<span class="expl">Needs to be between 3 and 20 characters, letters or numbers: <b>/^[a-z0-9]{3,20}$/</b></span>
+				<input name="txtRegisterUsername" type="text" value="" /></label>
+			<label>Password <sup>*</sup>
+				<span class="expl">Needs to be between 5 and 50 characters: <b>/^.{5,50}$/</b></span>
+				<input name="txtRegisterPassword" type="password" value="" autocomplete="off" /></label>
+			<label>Password (again, for verification) <sup>*</sup>
+				<span class="expl">Needs to be between 5 and 50 characters: <b>/^.{5,50}$/</b></span>
+				<span class="expl">It is also based on a non-regex check in order to be compared with the first password</span>
+				<input name="txtRegisterVerifyPassword" type="password" value="" autocomplete="off" /></label>
+			<label>Your email <sup>*</sup>
+				<span class="expl">Needs to be a valid email according to W3C HTML5 spec</b></span>
+				<input name="txtRegisterEmail" type="email" placeholder="your@email.com" value="" /></label>
+			<label>Name <sup>*</sup>
+				<span class="expl">May be anything: <b>/^.+$/</b></span>
+				<input name="txtRegisterFirstname" type="text" value="" /></label>
+			<label>Surname <sup>*</sup>
+				<span class="expl">May be anything: <b>/^.+$/</b></span>
+				<input name="txtRegisterLastname" type="text" value="" /></label>
+			<label>Gender<br/>
+				<span class="expl">Optional <b>(not validated at all)</b></span>
+				<select name="selRegisterGender">
+					<option value="0" style="padding-left: 0px"></option>
+					<option value="1" selected="selected" style="padding-left: 0px">Male</option>
+					<option value="2" style="padding-left: 0px">Female</option>
+				</select></label>
+			<label>Mobile phone <sup>*</sup>
+				<span class="expl">Greek-format mobile, ie. 10 digits starting with 69 (other rules are ignored for this demo): <b>/^69[0-9]{8}$/</b></span>
+				<input name="txtRegisterMobileNo" type="text" value="" /></label>
+		</div>
+
+	</div>
+
+	<!-- right col -->
+	<div class="one-half column" style="border: 1px #efefef solid; border-radius:5px; padding:13px;">
+		<div class="formtitle">Billing address (optional)</div>
+		<label>Address
+			<span class="expl">Optional <b>(not validated at all)</b></span>
+			<input name="txtRegisterBillingAddress" type="text" value="" /></label>
+		<label>Area
+			<span class="expl">Optional <b>(not validated at all)</b></span>
+			<input name="txtRegisterBillingArea" type="text" value="" /></label>
+		<label>City
+			<span class="expl">Optional <b>(not validated at all)</b></span>
+			<input name="txtRegisterBillingCity" type="text" value="" /></label>
+		<label>ZipCode
+			<span class="expl">Optional, but if set it needs to 5 digits long, starting with a digit other than 0: <b>/^[1-9]{1}[0-9]{4}$/</b></span>
+			<input name="txtRegisterBillingZipCode" type="text" value="" />
+			<span class="billingrequiredprompt">Invalid zipcode format</span>
+		</label>
+
+		<!-- Invoice options -->
+		<label>
+			<input type="checkbox" name="chkRegisterInvoice" value="1" />
+			Register invoice data <span class="expl">(click for more fields etc to be checked)</span>
+		</label>
+
+		<div class="divRegisterInvoice" style="padding:0px; display: none">
+			<label>Company Name
+				<input name="txtRegisterBillingCompanyName" type="text" value="" /></label>
+			<label>Activity
+				<input name="txtRegisterBillingActivity" type="text" value="" /></label>
+			<label>VAT No
+				<input name="txtRegisterBillingVatNo" type="text" value="" /></label>
+				<label>DOY
+
+					<br>
+					<select name="selRegisterBillingDOY">
+						<option value="0"></option>
+						<option value="1101" style="padding-left: 0px">Α' ΑΘΗΝΩΝ</option>
+						<option value="3321" style="padding-left: 0px">Α' ΒΟΛΟΥ</option>
+						<option value="8111" style="padding-left: 0px">Α' ΗΡΑΚΛΕΙΟΥ</option>
+						<option value="4211" style="padding-left: 0px">Α' ΘΕΣΣΑΛΟΝΙΚΗΣ</option>
+						<option value="6311" style="padding-left: 0px">Α' ΙΩΑΝΝΙΝΩΝ</option>
+						<option value="5321" style="padding-left: 0px">Α' ΚΑΒΑΛΑΣ</option>
+						<option value="1130" style="padding-left: 0px">Α' ΚΑΛΛΙΘΕΑΣ</option>
+						<option value="4711" style="padding-left: 0px">Α' ΚΑΤΕΡΙΝΗΣ</option>
+						<option value="9211" style="padding-left: 0px">Α' ΚΕΡΚΥΡΑΣ</option>
+						<option value="3231" style="padding-left: 0px">Α' ΛΑΡΙΣΑΣ</option>
+						<option value="5411" style="padding-left: 0px">Α' ΞΑΝΘΗΣ</option>
+						<!-- more stuff here -->
+						<option value="3251" style="padding-left: 0px">ΦΑΡΣΑΛΩΝ</option>
+						<option value="2743" style="padding-left: 0px">ΦΙΛΙΑΤΡΩΝ</option>
+						<option value="6241" style="padding-left: 0px">ΦΙΛΙΑΤΩΝ</option>
+						<option value="6113" style="padding-left: 0px">ΦΙΛΙΠΠΙΑΔΟΣ</option>
+						<option value="4812" style="padding-left: 0px">ΦΛΩΡΙΝΑΣ</option>
+						<option value="1156" style="padding-left: 0px">ΧΑΙΔΑΡΙΟΥ</option>
+						<option value="1134" style="padding-left: 0px">ΧΑΛΑΝΔΡΙΟΥ</option>
+						<option value="1732" style="padding-left: 0px">ΧΑΛΚΙΔΑΣ</option>
+						<option value="7411" style="padding-left: 0px">ΧΙΟΥ</option>
+						<option value="1176" style="padding-left: 0px">ΧΟΛΑΡΓΟΥ</option>
+						<option value="5331" style="padding-left: 0px">ΧΡΥΣΟΥΠΟΛΗΣ</option>
+						<option value="1175" style="padding-left: 0px">ΨΥΧΙΚΟΥ</option>
+
+					</select></label>
+			<label>Telephone no
+				<input name="txtRegisterBillingPhoneNo" type="text" value="" /></label>
+		</div>
+
+	</div>
+	<div style="width:100%; clear: both">
+		<input type="submit" name="frmRegSubmit" id="frmRegSubmit" value="Register" style="margin: 5px auto">
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="val.js" type="text/javascript"></script>
+<script src="app.js" type="text/javascript"></script>
+</body>
+</html>
